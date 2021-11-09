@@ -21,8 +21,7 @@
         <!-- Content Row-->
         @foreach($articles as $article)
 
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
+                    <div class="card mb-4 h-100">
                         <div class="card-body">
                             <h2 class="card-title">{{$article->title}}</h2>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni
@@ -30,7 +29,7 @@
                         </div>
                         <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{url('/article/'.$article->id)}}">More Info</a></div>
                     </div>
-                </div>
+
 
         @endforeach
     </div>
