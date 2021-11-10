@@ -25,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('createArticle');
     }
 
     /**
@@ -36,7 +36,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = new Article();
+        $article->author = $request->input('author');
+        $article->title = $request->input('title');
+        $article->body = $request->input('body');
+        $article->save();
+        return redirect('/');
     }
 
     /**
@@ -63,6 +68,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        return view('updateArticle',compact('id'));
     }
 
     /**
@@ -74,7 +80,13 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article=article::findOrFail($id);
+        $article->author = $request->input('author');
+        $article->title = $request->input('title');
+        $article->body = $request->input('body');
+
+        $article->save();
+        return redirect('/');
     }
 
     /**
