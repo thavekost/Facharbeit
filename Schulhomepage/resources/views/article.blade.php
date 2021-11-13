@@ -19,5 +19,7 @@
         <hr>
 
         <p class="body">{{ $article->body }}</p>
+        <a href="{{route('article.edit',$article->id)}}" class="btn btn-primary">bearbeiten</a>
+
     </div>
 @endsection
