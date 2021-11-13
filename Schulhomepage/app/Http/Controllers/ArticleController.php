@@ -100,6 +100,6 @@ class ArticleController extends Controller
     {
         $article=article::findOrFail($id);
         $article->delete();
-        return redirect('/');
+        return redirect('/overview');
     }
 }

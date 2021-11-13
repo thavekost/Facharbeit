@@ -13,4 +13,10 @@ class HomeController extends Controller
         $articles = article::all();
         return view('home',['articles'=>$articles]);
     }
+    public function overview()
+    {
+        //
+        $articles=article::all();
+        return view('deleteArticles',['articles'=>$articles]);
+    }
 }
