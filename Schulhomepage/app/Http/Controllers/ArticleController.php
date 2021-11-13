@@ -68,7 +68,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
-        return view('updateArticle',compact('id'));
+        $article=article::findOrFail($id);
+        return view('updateArticle',['article'=>$article]);
     }
 
     /**
@@ -97,6 +98,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article=article::findOrFail($id);
+        $article->delete();
+        return redirect('/');
     }
 }
